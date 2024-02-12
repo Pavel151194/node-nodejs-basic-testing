@@ -25,23 +25,23 @@ describe('BankAccount', () => {
 
   test('should deposit money', () => {
     const depositValue = 10;
-    const balanceBoforeDeposit = account1.getBalance();
-    expect(account1.deposit(depositValue).getBalance()).toBe(balanceBoforeDeposit + depositValue);
+    const balanceBeforeDeposit = account1.getBalance();
+    expect(account1.deposit(depositValue).getBalance()).toBe(balanceBeforeDeposit + depositValue);
   });
 
   test('should withdraw money', () => {
     const withdrawValue = 20;
-    const balanceBoforewithdraw = account1.getBalance();
-    expect(account1.withdraw(withdrawValue).getBalance()).toBe(balanceBoforewithdraw - withdrawValue);
+    const balanceBeforewithdraw = account1.getBalance();
+    expect(account1.withdraw(withdrawValue).getBalance()).toBe(balanceBeforewithdraw - withdrawValue);
   });
 
   test('should transfer money', () => {
     const transferValue = 30;
-    const balanceBoforeTransfer1 = account1.getBalance();
-    const balanceBoforeTransfer2 = account2.getBalance();
+    const balanceBeforeTransfer1 = account1.getBalance();
+    const balanceBeforeTransfer2 = account2.getBalance();
     account1.transfer(transferValue, account2);
-    expect(account1.getBalance()).toBe(balanceBoforeTransfer1 - transferValue);
-    expect(account2.getBalance()).toBe(balanceBoforeTransfer2 + transferValue);
+    expect(account1.getBalance()).toBe(balanceBeforeTransfer1 - transferValue);
+    expect(account2.getBalance()).toBe(balanceBeforeTransfer2 + transferValue);
   });
 
   test('fetchBalance should return number in case if request did not failed', async () => {
