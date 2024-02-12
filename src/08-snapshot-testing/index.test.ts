@@ -4,7 +4,13 @@ describe('generateLinkedList', () => {
   const elements = ['element1', 'element2', 'element3'];
   const result = {
     value: 'element1',
-    next: { value: 'element2', next: { value: 'element3', next: { value: null, next: null } } },
+    next: {
+      value: 'element2',
+      next: {
+        value: 'element3',
+        next: { value: null, next: null },
+      },
+    },
   };
 
   // Check match by expect(...).toStrictEqual(...)
